@@ -11,7 +11,7 @@ $fecha_riego_seleccionada = '';
 // Aquí exigiremos que inicie sesión para poder registrar/consultar plantas.
 if (isset($_POST['consultar'])) {
     if (!isset($_SESSION['usuario_id'])) {
-        header("Location: login.php");
+        header("Location: login.html");
         exit();
     }
 
@@ -116,9 +116,9 @@ if (isset($_POST['consultar'])) {
             <li><a href="calificanos.php" target="_blank">Califícanos</a></li>
             <?php if(isset($_SESSION['username'])): ?>
                 <li><a href="#">Hola, <?php echo htmlspecialchars($_SESSION['username']); ?></a></li>
-                <li><a href="login.php?logout=true" style="color: #ff6b6b;">Cerrar Sesión</a></li>
+                <li><a href="login.html?logout=true" style="color: #ff6b6b;">Cerrar Sesión</a></li>
             <?php else: ?>
-                <li><a href="login.php">Iniciar Sesión</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
             <?php endif; ?>
         </ul>
     </nav>
@@ -130,7 +130,7 @@ if (isset($_POST['consultar'])) {
             
             <?php if(!isset($_SESSION['usuario_id'])): ?>
                 <div style="background: #fff3cd; padding: 12px; border-radius: 6px; margin-bottom: 15px; border: 1px solid #ffeeba;">
-                    <p style="font-size: 0.9rem; color: #856404; margin: 0;">⚠️ <strong>Acceso restringido:</strong> Debes <a href="login.php">iniciar sesión</a> obligatoriamente para registrar plantas y utilizar el calendario de riego.</p>
+                    <p style="font-size: 0.9rem; color: #856404; margin: 0;">⚠️ <strong>Acceso restringido:</strong> Debes <a href="login.html">iniciar sesión</a> obligatoriamente para registrar plantas y utilizar el calendario de riego.</p>
                 </div>
             <?php else: ?>
                 <p>Ingresa los datos para conocer sus necesidades de agua y programar tu riego.</p>
